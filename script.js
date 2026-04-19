@@ -8,14 +8,19 @@ const options = [
 function submitVote(){
 
     const selectedOption = document.querySelector('input[name="poll"]:checked');
-    console.log(selectedOption.value);
+    //console.log(selectedOption.value);
 
     if(!selectedOption){
         alert("Please select an option");
         return;
     }
 
-    const optionId
+    const optionId = selectedOption.value;
+    const selectedOptionObj = options.find((option)=> option.id === optionId);
+
+    if(selectedOptionObj){
+        
+    }
 
 
 }

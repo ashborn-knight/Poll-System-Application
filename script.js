@@ -19,8 +19,18 @@ function submitVote(){
     const selectedOptionObj = options.find((option)=> option.id === optionId);
 
     if(selectedOptionObj){
-        
+        selectedOptionObj,votes++;
+        cconsole.log(selectedOptionObj);
+        displayResult();
     }
 
 
+}
+
+function displayResult(){
+
+}
+function getTotalVotes(){
+    return options.reduce((total,option)=> total + option.votes,0);
+    
 }

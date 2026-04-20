@@ -28,9 +28,16 @@ function submitVote(){
 }
 
 function displayResult(){
+    const result = document.getElementById('result');
+    result.innerHTML = " ";
+
+    options.forEach((option)=>){
+        const percentage = ((option.votes/ getTotalVotes()) * 100).toFixed(2) 
+    }
+
 
 }
 function getTotalVotes(){
     return options.reduce((total,option)=> total + option.votes,0);
-    
+
 }

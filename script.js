@@ -32,7 +32,21 @@ function displayResult(){
     result.innerHTML = " ";
 
     options.forEach((option)=>){
-        const percentage = ((option.votes/ getTotalVotes()) * 100).toFixed(2) 
+        const percentage = ((option.votes/ getTotalVotes()) * 100).toFixed(2) || 0;
+        const barWidth = percentage > 0 ? percentage + "%":"0%";
+
+        const optionResult = document.createElement("div");
+        optionResult.className = "option-result";
+        optionResult.innerHTML= '
+        <span class ="option-text">${option.text} </span>
+        <div class = "bar-container">
+            <div class= "bar" style="width: ${barWidth};"></div>
+            <span class ="percentage">${percentage}</span>
+        </div>
+        ';
+
+        result.appendChild(optionResult);
+    });
     }
 
 

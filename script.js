@@ -41,7 +41,7 @@ function displayResult(){
         <span class ="option-text">${option.text} </span>
         <div class = "bar-container">
             <div class= "bar" style="width: ${barWidth};"></div>
-            <span class ="percentage">${percentage}</span>
+            <span class ="percentage">${percentage}%</span>
         </div>
         ';
 
@@ -55,3 +55,4 @@ function getTotalVotes(){
     return options.reduce((total,option)=> total + option.votes,0);
 
 }
+displayResult();
